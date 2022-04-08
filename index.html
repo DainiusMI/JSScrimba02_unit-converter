@@ -15,15 +15,17 @@
 </head>
 <body>
     <div class="main-container">
+
         <div class="top-section">
+            <button onclick="changeTheme()" id="theme-button" class="theme">Theme</button>
             <h1>Metric/Imerial unit conversion</h1>
-            <input onchange="convert()" type="number" name="number" id="inputed-number" value="0">
+            <input onkeyup="convert()" type="number" id="inputed-number" value="0" onfocus="this.value= ' '">
 
         </div>
 
-        <div class="bottom-section">
+        <div id="bottom-section" class="bottom-section">
             <div class="coversion-area">
-                <div class="label">Lenght (Meter/Feet)</div>
+                <div class="label">Lenght (Meter/Feet)</div>    
                 <div class="row">
                     <p id="meter-feet">0 meters = 0 feet</p>
                     <div class="divider"></div>

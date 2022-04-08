@@ -25,8 +25,7 @@ body {
 }
 
 .main-container {
-  height: 50%;
-  width: 60%;
+  width: clamp(40%, 10vw, 90%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,6 +60,21 @@ body {
           justify-content: center;
   background: #fb3796;
   background: linear-gradient(45deg, #fb3796 0%, #585dfe 100%);
+  text-align: center;
+  position: relative;
+}
+
+.top-section .theme {
+  position: absolute;
+  top: -5%;
+  padding: .5rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.top-section .theme:hover {
+  background-color: #1F2937;
+  color: white;
 }
 
 .top-section h1 {
@@ -124,6 +138,7 @@ body {
 
 .bottom-section .coversion-area p {
   line-height: 20px;
+  opacity: .8;
 }
 
 .bottom-section .coversion-area .row {
@@ -137,9 +152,43 @@ body {
   gap: .5rem;
 }
 
-.bottom-section .coversion-area .row .divider {
+.bottom-section .divider {
   width: 1px;
   height: 20px;
   background-color: #4E4E4E;
+}
+
+.dark-theme {
+  background-color: #1F2937;
+  color: white;
+}
+
+.dark-theme .coversion-area .divider {
+  background-color: white;
+}
+
+.dark-theme .coversion-area .label,
+.dark-theme .coversion-area p {
+  color: white;
+}
+
+.top-section .light-theme {
+  background-color: #1F2937;
+  color: white;
+}
+
+.top-section .light-theme:hover {
+  background-color: white;
+  color: #1F2937;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 /*# sourceMappingURL=home.css.map */

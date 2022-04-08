@@ -20,8 +20,7 @@ body {
 
 }
 .main-container {
-    height: 50%;
-    width: 60%;
+    width: clamp(40%, 10vw, 90%);
     @include flexCol(center, center);
 }
 .top-section {
@@ -30,7 +29,21 @@ body {
     padding: 3rem;
     @include flexCol(center, center);
     background: rgb(251,55,150);
-    background: linear-gradient(45deg, rgba(251,55,150,1) 0%, rgba(88,93,254,1) 100%);;
+    background: linear-gradient(45deg, rgba(251,55,150,1) 0%, rgba(88,93,254,1) 100%);
+    text-align: center;
+
+    position: relative;
+    .theme {
+        position: absolute;
+        top: -5%;
+        padding: .5rem;
+        border-radius: .5rem;
+        cursor: pointer;
+        &:hover {
+            background-color: #1F2937;
+            color: white;
+        }
+    }
     h1 {
         color: #FFFFFF;
         font-weight: 800;
@@ -55,6 +68,7 @@ body {
     @include flexCol(center, center);
     padding: 3rem;
     gap: 2rem;
+
     .coversion-area {
         @include flexCol(center, center);
         gap: .5rem;
@@ -64,17 +78,48 @@ body {
         }
         p {
             line-height: 20px;
+            opacity: .8;
         }
         .row {
             display: flex;
             flex-direction: row;
             gap: .5rem;
-            .divider {
-                width: 1px;
-                height: 20px;
-                background-color: #4E4E4E;
 
-            }
         }
     }
+    .divider {
+        width: 1px;
+        height: 20px;
+        background-color: #4E4E4E;
+
+    }
+}
+.dark-theme {
+    background-color: #1F2937;
+    color: white;
+    .coversion-area {
+        .divider {
+            background-color: white;
+        }
+        .label,
+        p {
+            color: white;
+        }
+    }
+}
+.top-section .light-theme {
+    background-color: #1F2937;
+    color: white;
+    &:hover {
+        background-color: white;
+        color: #1F2937;
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
 }
